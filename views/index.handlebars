@@ -2,8 +2,8 @@
 <img class="center-image" src="/assets/img/burger.svg" width="200" height="auto">
 
 <div class="burger-container">
-  <div class="burger-list">
-    <h2>Burgers to Eat</h2>
+  <ul class="burger-list">
+    <h2>Burgers to Devour</h2>
     {{#each burgers}}
     {{#unless devoured}}
     <div class="burger">
@@ -12,9 +12,9 @@
     </div>
     {{/unless}}
     {{/each}}
-  </div>
+  </ul>
 
-  <div class="burger-list">
+  <ul class="burger-list">
     <h2>Devoured Burgers</h2>
     {{#each burgers}}
     {{#if devoured}}
@@ -24,7 +24,7 @@
     </div>
     {{/if}}
     {{/each}}
-  </div>
+  </ul>
 </div>
 
 <div class="form-container">

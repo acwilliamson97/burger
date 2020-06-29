@@ -4,13 +4,14 @@
   "description": "eat da burger",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acwilliamson97/burger.git"
   },
-  "author": "",
+  "author": "Anna Williamson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/acwilliamson97/burger/issues"
