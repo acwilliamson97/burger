@@ -1,37 +1,57 @@
-<h1>Devour a Burger!</h1>
-<img class="center-image" src="/assets/img/burger.svg" width="200" height="auto">
-
-<div class="burger-container">
-  <ul class="burger-list">
-    <h2>Burgers to Devour</h2>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <div class="burger">
-      <p>{{burger_name}}</p>
-      <button class="devour-burger" data-id="{{id}}">Devour Burger</button>
-    </div>
-    {{/unless}}
-    {{/each}}
-  </ul>
-
-  <ul class="burger-list">
-    <h2>Devoured Burgers</h2>
-    {{#each burgers}}
-    {{#if devoured}}
-    <div class="burger">
-      <p>{{burger_name}}</p>
-      <button class="delete-burger" data-id="{{id}}">Delete Burger</button>
-    </div>
-    {{/if}}
-    {{/each}}
-  </ul>
+<div class="row">
+  <div class="col-sm">
+    <header class="container">
+      <img src="/images/burger-img.png">
+    </header>
+  </div>
 </div>
 
-<div class="form-container">
-  <h3>Add a Burger</h3>
-  <form class="add-burger">
-    <label for="name">Name:</label>
-    <input type="text" id="name">
-    <button>Add Burger</button>
-  </form>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
+    <section class="container">
+      <h2 class="text-center">ARE YOU HUNGRY?</h2>
+      <ul class="list-group">
+        {{#each burgers }}
+        {{#unless devoured }}
+        <li class="list-group-item text-left">{{burger_name}}<button data-id="{{ id }}"
+            class="eaten btn btn-info btn-sm ml-5 float-right">Devour it!</button></li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </section>
+
+  </div>
+  <div class="col-sm-4">
+    <section class="container">
+      <h2 class="text-center">IT WAS DELICIOUS!</h2>
+      <ul class="list-group">
+        {{#each burgers }}
+        {{#if devoured}}
+        <li class="list-group-item text-left">{{burger_name}}</li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </section>
+  <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <section class="container my-5">
+      <h5 class="text-center"> Enter a burger you want to eat!</h5>
+      <form action="/api/burgers" method="POST">
+        <div class="input-group mb-3">
+          <input name="burger_name" type="text" class="form-control" placeholder="Burger Name"
+            aria-label="insert burger name">
+          <div class="input-group-append">
+            <button class="btn btn-outline-danger" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+  <div class="col-sm-4"></div>
 </div>
