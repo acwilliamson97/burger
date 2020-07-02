@@ -23,8 +23,6 @@ const orm = {
     }
 };
 
-module.exports = orm;
-
 orm.getAll("burgers", burgers => console.log(burgers));
 
 orm.createOne("burgers", {burger_name: "Cheeseburger"}, result => {
@@ -34,3 +32,5 @@ orm.createOne("burgers", {burger_name: "Cheeseburger"}, result => {
 orm.updateById("burgers", {burger_name: "Veggie Burger"}, 3, result => {
   console.log(result);
 });
+
+module.exports = orm;

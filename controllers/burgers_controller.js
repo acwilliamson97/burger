@@ -19,7 +19,7 @@ router.post("/api/burgers", (req, res) => {
     })
 });
 
-router.patch("/api/burgers/:id", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
     const id = parseInt(req.params.id);
     if (Number.isNaN(id)){
         return res.sendStatus(404);
